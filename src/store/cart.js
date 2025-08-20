@@ -9,15 +9,34 @@ const initialState = {
   status: null,
 };
 
+// export const fetchCartFromAPI = createAsyncThunk(
+//   'cart/fetchCartFromAPI',
+//   async (_, { getState }) => {
+//     const email = getState().auth.email?.replace(/\./g, '_');
+//     if (!email) return [];
+//     const response = await axios.get(`${FIREBASE_URL}/carts/${email}.json`);
+//     console.log("Fetched cart:", response.data);
+//     return response.data ? Object.entries(response.data).map(([id, item]) => ({ id, ...item })) : [];
+//   }
+// );
+
+// cart.js (inside your Redux Toolkit slice)
+
 export const fetchCartFromAPI = createAsyncThunk(
-  'cart/fetchCartFromAPI',
+  "cart/fetchCartFromAPI",
   async (_, { getState }) => {
-    const email = getState().auth.email?.replace(/\./g, '_');
+    const email = getState().auth.email?.replace(/\./g, "_");
     if (!email) return [];
     const response = await axios.get(`${FIREBASE_URL}/carts/${email}.json`);
-    return response.data ? Object.entries(response.data).map(([id, item]) => ({ id, ...item })) : [];
+    if (!response.data) return [];
+    console.log("Fetched cart:", response.data);
+    return Object.keys(response.data).map((id) => ({
+      id,
+      ...response.data[id],
+    }));
   }
 );
+
 
 export const addItemToAPI = createAsyncThunk(
   'cart/addItemToAPI',
