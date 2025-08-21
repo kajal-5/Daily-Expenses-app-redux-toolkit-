@@ -8,8 +8,10 @@ import "./App.css";
 
 
 function App() {
-    const dispatch = useDispatch();
+  
+  const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
+  const isDark = useSelector((state) => state.theme.isDark);
 
   useEffect(() => {
     dispatch(loadStoredUser());
@@ -20,12 +22,14 @@ function App() {
       dispatch(fetchCartFromAPI()); // ✅ load cart if logged in
     }
   }, [token, dispatch]);
+  
+  
   return (
-    <>
+    <div className={isDark ? "dark-theme" : "light-theme"}>
       <Router>
         <Header />
       </Router>
-    </>
+    </div>
   );
 }
 

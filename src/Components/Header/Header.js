@@ -9,6 +9,11 @@ import CartList from "../Cart/CartList";
 import ProtectedRoute from "./ProtectedRoute";
 import CartButton from "../Cart/CartButton";
 import "./header.css";
+import ActivatePremium from "../Premium/ActivatePremium";
+import ThemeToggle from "../Premium/ThemeToggle";
+import DownloadCSV from "../Premium/DownloadCSV";
+
+
 
 const Header = () => {
   const { token, email } = useSelector((state) => state.auth);
@@ -34,7 +39,7 @@ const Header = () => {
       <header className="header-ribbon">
         <div className="header-content">
           <div className="nav-left">
-            <span className="header-title">Redux Auth</span>
+            <span className="header-title">Daily Expense Tracker</span>
             {!token && <Link to="/">Login</Link>}
             {token && <span>Welcome, {email}</span>}
             {token &&statusMessage && <p>{statusMessage}</p>}
@@ -45,6 +50,9 @@ const Header = () => {
               <>
                 {token && <Link to="/items">Items</Link>}
                 <CartButton />
+                <ActivatePremium />
+                <ThemeToggle />
+                <DownloadCSV />
                 <button onClick={logoutHandler}>Logout</button>
               </>
             )}

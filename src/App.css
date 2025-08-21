@@ -5,7 +5,18 @@ body {
     background-image: url("Images/img3.png");
     background-repeat: no-repeat;  /* no tiling */
     background-size: cover;        /* scale to cover full width */
-
     background-position: top center;
-    
+}
+.light-theme {
+  background-color: #f4f4f9;
+  color: #222;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #f4f4f9;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
