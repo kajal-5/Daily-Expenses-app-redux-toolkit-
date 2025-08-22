@@ -1,22 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("Images/dailyExp.png");
-    background-image: url("Images/img3.png");
-    background-repeat: no-repeat;  /* no tiling */
-    background-size: cover;        /* scale to cover full width */
-    background-position: top center;
+
 }
-.light-theme {
-  background-color: #f4f4f9;
-  color: #222;
-  min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease;
+/* Light theme background */
+.app-container.light {
+  background-image: url("./Images/img3.png");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: top center;
 }
 
-.dark-theme {
-  background-color: #121212;
-  color: #f4f4f9;
-  min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease;
+/* Dark theme background */
+.app-container.dark {
+  background-image: url("./Images/img1.png");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: top center;
 }

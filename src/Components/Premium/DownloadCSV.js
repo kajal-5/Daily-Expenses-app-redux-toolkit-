@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import "./premium.css";
+// import "./premium.css";
 
 export default function DownloadCSV() {
   const { isPremium } = useSelector((state) => state.theme);
@@ -24,7 +24,7 @@ export default function DownloadCSV() {
 
   return (
     <button className="premium-btn" onClick={handleDownload}>
-      Download Expenses (CSV)
+      Download(CSV)
     </button>
   );
 }

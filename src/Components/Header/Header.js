@@ -39,7 +39,7 @@ const Header = () => {
       <header className="header-ribbon">
         <div className="header-content">
           <div className="nav-left">
-            <span className="header-title">Daily Expense Tracker</span>
+            <span className="header-title">Daily-Expense</span>
             {!token && <Link to="/">Login</Link>}
             {token && <span>Welcome, {email}</span>}
             {token &&statusMessage && <p>{statusMessage}</p>}

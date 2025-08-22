@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../store/themeSlice";
-import "./premium.css";
+// import "./premium.css";
 
 export default function ThemeToggle() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export default function ThemeToggle() {
 
   return (
     <button className="premium-btn" onClick={() => dispatch(toggleTheme())}>
-      Switch to {isDark ? "Light" : "Dark"} Theme
+      Theme {isDark ? "Light" : "Dark"}
     </button>
   );
 }

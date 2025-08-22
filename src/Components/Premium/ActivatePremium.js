@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { activatePremium, deactivatePremium } from "../../store/themeSlice";
-import "./premium.css";
+// import "./premium.css";
 
 export default function ActivatePremium() {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ export default function ActivatePremium() {
         isPremium ? dispatch(deactivatePremium()) : dispatch(activatePremium())
       }
     >
-      {isPremium ? "Deactivate Premium" : "Activate Premium"}
+      {isPremium ? "Premium" : "Activate Premium"}
     </button>
   );
 }
