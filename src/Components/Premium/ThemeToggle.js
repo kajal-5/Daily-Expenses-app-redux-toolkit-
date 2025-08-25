@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../store/themeSlice";
-// import "./premium.css";
+
 
 export default function ThemeToggle() {
   const dispatch = useDispatch();

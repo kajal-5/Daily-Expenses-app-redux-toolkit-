@@ -15,7 +15,7 @@ export default function ActivatePremium() {
     0
   );
 
-  // ✅ auto deactivate if total < 10000
+  // auto deactivate if total < 10000
   useEffect(() => {
     if (totalAmount < 10000 && isPremium) {
       dispatch(deactivatePremium());

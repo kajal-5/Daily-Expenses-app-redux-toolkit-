@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      dispatch(fetchCartFromAPI()); // ✅ load cart if logged in
+      dispatch(fetchCartFromAPI()); //load cart if logged in
     }
   }, [token, dispatch]);
   
@@ -28,12 +28,6 @@ function App() {
     <div className={`app-container ${isDark ? "dark" : "light"}`}>
       <Router>
         <Header />
-        <h1>Welcome to the App</h1>
-      <img src= {
-          isDark
-            ? require("./Images/img1.png")
-            : require("./Images/img3.png")
-          } alt="App Logo" className="center-image" />
       </Router>
     </div>
   );
