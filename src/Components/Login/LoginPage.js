@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, signupUser } from "../../store/auth";
-
 import { Link, useNavigate } from "react-router-dom";
 import { fetchCartFromAPI } from "../../store/cart";
 import "./LoginPage.css";

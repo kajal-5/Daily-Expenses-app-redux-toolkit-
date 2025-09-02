@@ -7,7 +7,7 @@ const store = configureStore({
     reducer:{
         auth:authSlice , 
         cart:cartSlice ,
-        theme: themeReducer,
+        theme:themeReducer,
     }
 });
 

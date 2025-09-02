@@ -1,26 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const FIREBASE_URL = 'https://daily-expenses-app-53b16-default-rtdb.firebaseio.com';
+const FIREBASE_URL = "https://daily-expenses-42f35-default-rtdb.firebaseio.com";
 
 const initialState = {
   isVisible: false,
   items: [],
   status: null,
 };
-
-// export const fetchCartFromAPI = createAsyncThunk(
-//   'cart/fetchCartFromAPI',
-//   async (_, { getState }) => {
-//     const email = getState().auth.email?.replace(/\./g, '_');
-//     if (!email) return [];
-//     const response = await axios.get(`${FIREBASE_URL}/carts/${email}.json`);
-//     console.log("Fetched cart:", response.data);
-//     return response.data ? Object.entries(response.data).map(([id, item]) => ({ id, ...item })) : [];
-//   }
-// );
-
-// cart.js (inside your Redux Toolkit slice)
 
 export const fetchCartFromAPI = createAsyncThunk(
   "cart/fetchCartFromAPI",
@@ -51,7 +38,7 @@ export const addItemToAPI = createAsyncThunk(
       const updatedItem = {
         name: existing.name,
         quantity: existing.quantity + item.quantity,
-        price: existing.price + item.price,
+        price: Math.floor((existing.price + item.price)/(existing.quantity+item.quantity)),
       };
       await dispatch(updateItemQuantityAPI({ id: existing.id, updatedItem }));
     } else {

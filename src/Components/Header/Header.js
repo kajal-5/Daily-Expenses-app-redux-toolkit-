@@ -1,7 +1,6 @@
 import { Link, Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/auth";
-
 import LoginPage from "../Login/LoginPage";
 import ForgotPasswordPage from "../Login/ForgotPasswordPage";
 import ItemForm from "../Shop/ItemForm";
@@ -48,7 +47,7 @@ const Header = () => {
           <div className="nav-right">
             {token && (
               <>
-                {token && <Link to="/items">Items</Link>}
+                <Link to="/items">Items</Link>
                 <CartButton />
                 <ActivatePremium />
                 <ThemeToggle />

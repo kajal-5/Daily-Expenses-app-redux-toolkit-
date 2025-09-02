@@ -1,32 +1,3 @@
-// import { render, screen } from "@testing-library/react";
-// import { Provider } from "react-redux";
-// import { BrowserRouter } from "react-router-dom";
-// import configureStore from "redux-mock-store";
-// import LoginPage from "../Components/Login/LoginPage";
-
-
-// const mockStore = configureStore([]);
-
-// test("renders LoginPage with email input", () => {
-//   const store = mockStore({ auth: { isAuthenticated: false } });
-
-//   render(
-//     <Provider store={store}>
-//       <BrowserRouter>
-//         <LoginPage />
-//       </BrowserRouter>
-//     </Provider>
-//   );
-
-//   expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-// });
-
-
-/////////////////imp
-
-
-
-
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
@@ -34,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../store/auth";
 import LoginPage from "../Components/Login/LoginPage";
+import { MemoryRouter } from "react-router-dom";
 
 function renderWithProviders(ui) {
   const store = configureStore({
@@ -44,7 +16,7 @@ function renderWithProviders(ui) {
     store,
     ...render(
       <Provider store={store}>
-        <BrowserRouter>{ui}</BrowserRouter>
+        <MemoryRouter>{ui}</MemoryRouter>
       </Provider>
     ),
   };
@@ -81,7 +53,7 @@ test("submits form when login button is clicked", async () => {
 
   fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
-  // verify dispatch happened by checking auth slice state
+ 
   const state = store.getState().auth;
   expect(state).toBeDefined();
 });

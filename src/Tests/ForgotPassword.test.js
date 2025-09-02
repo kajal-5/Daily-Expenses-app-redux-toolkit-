@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import ForgotPasswordPage from "../Components/Login/ForgotPasswordPage";
+import { MemoryRouter } from "react-router-dom";
 
 const mockStore = configureStore([]);
 
@@ -16,9 +17,9 @@ describe("ForgotPasswordPage", () => {
   test("renders email input", () => {
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <MemoryRouter>
           <ForgotPasswordPage />
-        </BrowserRouter>
+        </MemoryRouter>
       </Provider>
     );
 
@@ -28,9 +29,9 @@ describe("ForgotPasswordPage", () => {
   test("renders reset password button", () => {
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <MemoryRouter>
           <ForgotPasswordPage />
-        </BrowserRouter>
+        </MemoryRouter>
       </Provider>
     );
 
@@ -40,9 +41,9 @@ describe("ForgotPasswordPage", () => {
   test("allows typing in email input", () => {
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <MemoryRouter>
           <ForgotPasswordPage />
-        </BrowserRouter>
+        </MemoryRouter>
       </Provider>
     );
 
@@ -56,9 +57,9 @@ describe("ForgotPasswordPage", () => {
 
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <MemoryRouter>
           <ForgotPasswordPage />
-        </BrowserRouter>
+        </MemoryRouter>
       </Provider>
     );
 

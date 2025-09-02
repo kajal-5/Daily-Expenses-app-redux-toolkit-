@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addItemToAPI } from '../../store/cart'; // Assuming you have an action to add items
+import { addItemToAPI } from '../../store/cart';
 import './itemform.css';
 
 const ItemForm = () => {
@@ -22,8 +22,6 @@ const ItemForm = () => {
     setPrice('');
 
   };
-
-  // const total= quantity * price;
 
   return (
     <form className="itemform-container" onSubmit={submitHandler}>
@@ -59,7 +57,7 @@ const ItemForm = () => {
         min="10"
         required
       />
-      {/* <p>Total: ₹{total}</p> */}
+
       <p>Total: ₹{quantity && price ? quantity * price : 0}</p>
       
       <button type="submit">Add to Cart</button>

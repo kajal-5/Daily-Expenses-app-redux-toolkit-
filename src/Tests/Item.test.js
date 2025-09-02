@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
-import store from "../store"; // your real Redux store
+import store from "../store";
 import ItemForm from "../Components/Shop/ItemForm";
 
 describe("ItemForm component", () => {

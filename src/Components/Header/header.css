@@ -11,7 +11,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 5px;
 }
+
 
 .nav-left {
   display: flex;
@@ -22,7 +24,7 @@
 
 .nav-right {
   display: flex;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   align-items: center;
   gap: 50px;
   margin-right: 30px; /* ✅ adds space from right corner */
@@ -60,18 +62,4 @@ button {
 button:hover {
   background: white;
   color: #4a90e2;
-}
-
-
-/* Light Theme (default) */
-.navbar {
-  background-color: #007bff; /* blue */
-  color: white;
-  padding: 10px;
-}
-
-/* Dark Theme */
-body.dark .navbar {
-  background-color: #444; /* grey */
-  color: white;
 }

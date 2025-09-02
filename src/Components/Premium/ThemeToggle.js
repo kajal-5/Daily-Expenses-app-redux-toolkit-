@@ -5,7 +5,6 @@ import { toggleTheme } from "../../store/themeSlice";
 export default function ThemeToggle() {
   const dispatch = useDispatch();
   const { isDark, isPremium } = useSelector((state) => state.theme);
-
   if (!isPremium) return null;
 
   return (

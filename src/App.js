@@ -22,10 +22,14 @@ function App() {
       dispatch(fetchCartFromAPI()); //load cart if logged in
     }
   }, [token, dispatch]);
+
+  useEffect(() => {
+    document.body.className = isDark ? "dark" : "light";  // toggle body class
+  }, [isDark]);
   
   
   return (
-    <div className={`app-container ${isDark ? "dark" : "light"}`}>
+    <div>
       <Router>
         <Header />
       </Router>

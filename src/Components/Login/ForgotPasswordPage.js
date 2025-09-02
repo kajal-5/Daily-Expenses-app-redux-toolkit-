@@ -4,17 +4,15 @@ import { sendPasswordReset } from "../../store/auth";
 import "./ForgotPasswordPage.css";
 
 const ForgotPasswordPage = () => {
+
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   console.log("forgort password page", email);
-
   const { loading, error, successMessage } = useSelector((state) => state.auth);
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
     const resultAction = await dispatch(sendPasswordReset(email));
-
     if (resultAction.meta.requestStatus === "fulfilled") {
       alert("Password reset email sent!");
       setEmail("");

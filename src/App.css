@@ -1,18 +1,16 @@
 body {
     margin: 0;
     padding: 0;
-
 }
-/* Light theme background */
-.app-container.light {
+
+body.light{
   background-image: url("./Images/img3.png");
   background-repeat: no-repeat; 
   background-size: cover;
   background-position: top center;
 }
 
-/* Dark theme background */
-.app-container.dark {
+body.dark{
   background-image: url("./Images/img1.png");
   background-repeat: no-repeat; 
   background-size: cover;
