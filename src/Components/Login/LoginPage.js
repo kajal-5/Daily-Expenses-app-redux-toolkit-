@@ -48,7 +48,7 @@ const LoginPage = () => {
       alert("Authentication successful!");
       clearFields();
       await dispatch(fetchCartFromAPI());
-      navigate("/item-form");
+      navigate("/items");
     }
   };
 
